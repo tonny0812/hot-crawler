@@ -2,7 +2,6 @@ package com.taogen.hotcrawler.commons.crawler.impl.abroad;
 
 import com.taogen.hotcrawler.commons.crawler.HotProcessor;
 import com.taogen.hotcrawler.commons.crawler.impl.BaseHotProcessor;
-import com.taogen.hotcrawler.commons.crawler.impl.technique.DeveloperHotProcessor;
 import com.taogen.hotcrawler.commons.entity.Info;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -61,7 +60,6 @@ public class EconomistHotProcessor implements HotProcessor
             }
         }
 
-        log.debug("return list size is {}", list.size());
-        return list;
+        return baseHotProcessor.handleData(list);
     }
 }

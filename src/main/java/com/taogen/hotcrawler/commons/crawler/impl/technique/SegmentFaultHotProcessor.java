@@ -60,8 +60,7 @@ public class SegmentFaultHotProcessor implements HotProcessor
             }
         }
 
-        log.debug("return list size is {}", list.size());
-        return list;
+        return baseHotProcessor.handleData(list);
     }
 
 }

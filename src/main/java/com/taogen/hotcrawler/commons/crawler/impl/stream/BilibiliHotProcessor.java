@@ -20,7 +20,6 @@ import java.util.List;
 public class BilibiliHotProcessor implements HotProcessor
 {
     private static final Logger log = LoggerFactory.getLogger(BilibiliHotProcessor.class);
-    private static final String OS = System.getProperty("os.name").toLowerCase();
 
     @Autowired
     private BaseHotProcessor baseHotProcessor;
@@ -97,7 +96,7 @@ public class BilibiliHotProcessor implements HotProcessor
 
             list.add(new Info(id, infoTitle, infoUrl));
         }
-        log.debug("list size is {}", list.size());
-        return list;
+
+        return baseHotProcessor.handleData(list);
     }
 }
